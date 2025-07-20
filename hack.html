@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio Dashboard</title>
+    <link rel="stylesheet" href="hack.css">
+</head>
+<body>
+    <header>
+    <h1><span id="typing"></span></h1>
+    <p>Showcasing my journey through hackathons and achievements 💻</p>
+  </header>
+    <div class="container">
+        <div class="profile-header">
+            <img src="WhatsApp Image 2025-07-20 at 1.57.38 PM.jpeg" alt="Profile picture of student with university background" class="profile-pic">
+            <div class="profile-info">
+                <h1>ABHISHEK KUMAR</h1>
+                <p>LOVELY PROFESSIONAL UMIVERSITY | BTECH/COMPUTER SCIENCE AND ENGINEERING</p>
+                <p>Passionate and driven B.Tech student with a strong interest in software development and game developer.<br>Strong technical proficiency in C,Python with excellent problem-solving and communication skills.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/abhishek-kumar-2004nov22/" title="LinkedIn"><i class="linkdin"></i></a>
+                    <a href="https://github.com/ITS-ABHI-TECH" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-grid">
+            <!-- Projects Card -->
+            <div class="dashboard-card">
+                <h2 class="card-title">Projects</h2>
+                <div class="project-item">
+                    <h3 class="item-title">Project Title 1</h3>
+                    <p class="item-description">Brief description of the project and technologies used.</p>
+                    <p class="item-date">January 2023</p>
+                    <div class="item-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3 class="item-title">Project Title 2</h3>
+                    <p class="item-description">Another project description highlighting achievements and technologies.</p>
+                    <p class="item-date">March 2024</p>
+                    <div class="item-skills">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="openModal('project')">
+                    <i class="fas fa-plus"></i> Add Project
+                </button>
+            </div>
+            <div class="dashboard-card">
+                <h2 class="card-title">Events & Participation</h2>
+                <div class="event-item">
+                    <h3 class="item-title">Hackathon Name</h3>
+                    <p class="item-description">Description of the event and your participation.</p>
+                    <p class="item-date">jan 2025</p>
+                    <div class="item-skills">
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <h3 class="item-title">Tech Conference</h3>
+                    <p class="item-description">Attended as a delegate and participated in workshops.</p>
+                    <p class="item-date">October 2024</p>
+                </div>
+                <button class="add-btn" onclick="openModal('event')">
+                    <i class="fas fa-plus"></i> Add Event
+                </button>
+            </div>
+            <div class="dashboard-card">
+                <h2 class="card-title">Certificates</h2>
+                <div class="certificate-item">
+                    <h3 class="item-title">Web Development Course</h3>
+                    <p class="item-description">Completed a comprehensive web development program.</p>
+                    <p class="item-date">Issued: August 2022</p>
+                </div>
+                <div class="certificate-item">
+                    <h3 class="item-title">Python Programming</h3>
+                    <p class="item-description">Certificate for completing Python programming course.</p>
+                    <p class="item-date">Issued: December 2022</p>
+                </div>
+                <button class="add-btn" onclick="openModal('certificate')">
+                    <i class="fas fa-plus"></i> Add Certificate
+                </button>
+            </div>
+            <div class="dashboard-card">
+                <h2 class="card-title">Achievements</h2>
+                <div class="achievement-item">
+                    <h3 class="item-title">Dean's List</h3>
+                    <p class="item-description">Academic excellence award for top GPA in the department.</p>
+                    <p class="item-date">Spring 2023</p>
+                </div>
+                <div class="achievement-item">
+                    <h3 class="item-title">Competition Winner</h3>
+                    <p class="item-description">First place in regional coding competition.</p>
+                    <p class="item-date">November 2022</p>
+                </div>
+                <button class="add-btn" onclick="openModal('achievement')">
+                    <i class="fas fa-plus"></i> Add Achievement
+                </button>
+            </div>
+        </div>
+        
+        <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Print Portfolio
+        </button>
+    </div>
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Project</h2>
+                <span class="close-btn" onclick="closeModal('project')">&times;</span>
+            </div>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectTitle">Project Title</label>
+                    <input type="text" id="projectTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectDate">Date</label>
+                    <input type="date" id="projectDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectSkills">Skills/Tech Used (comma separated)</label>
+                    <input type="text" id="projectSkills" placeholder="HTML, CSS, JavaScript">
+                </div>
+                <button type="submit" class="submit-btn">Save Project</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Event</h2>
+                <span class="close-btn" onclick="closeModal('event')">&times;</span>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventSkills">Skills Demonstrated (comma separated)</label>
+                    <input type="text" id="eventSkills" placeholder="Public Speaking, Teamwork">
+                </div>
+                <button type="submit" class="submit-btn">Save Event</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Certificate</h2>
+                <span class="close-btn" onclick="closeModal('certificate')">&times;</span>
+            </div>
+            <form id="certificateForm">
+                <div class="form-group">
+                    <label for="certificateTitle">Certificate Title</label>
+                    <input type="text" id="certificateTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="certificateDescription">Description</label>
+                    <textarea id="certificateDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="certificateDate">Date Issued</label>
+                    <input type="date" id="certificateDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="certificateIssuer">Issuing Organization</label>
+                    <input type="text" id="certificateIssuer">
+                </div>
+                <button type="submit" class="submit-btn">Save Certificate</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="achievementModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Achievement</h2>
+                <span class="close-btn" onclick="closeModal('achievement')">&times;</span>
+            </div>
+            <form id="achievementForm">
+                <div class="form-group">
+                    <label for="achievementTitle">Achievement Title</label>
+                    <input type="text" id="achievementTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="achievementDescription">Description</label>
+                    <textarea id="achievementDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="achievementDate">Date</label>
+                    <input type="date" id="achievementDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="achievementOrganization">Awarding Organization</label>
+                    <input type="text" id="achievementOrganization">
+                </div>
+                <button type="submit" class="submit-btn">Save Achievement</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Student Portfolio Dashboard | Hackathon Project</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const socialLinks = document.querySelectorAll('.social-links a');
+            socialLinks.forEach(link => {
+                link.innerHTML = link.title === 'LinkedIn' ? 'Linkdin' : 
+                                link.title === 'GitHub' ? 'Github' : 
+                                link.title === 'Twitter' ? 'T' : 
+                                link.title === 'Portfolio Website' ? 'W' : '';
+            });
+            document.querySelectorAll('.add-btn').forEach(btn => {
+                btn.innerHTML = '+' + btn.innerHTML.replace('<i class="fas fa-plus"></i>', '').trim();
+            });
+            document.querySelector('.print-btn').innerHTML = '🖨️ ' + document.querySelector('.print-btn').textContent;
+            document.getElementById('projectForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addNewItem('project');
+                closeModal('project');
+            });
+            
+            document.getElementById('eventForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addNewItem('event');
+                closeModal('event');
+            });
+            
+            document.getElementById('certificateForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addNewItem('certificate');
+                closeModal('certificate');
+            });
+            
+            document.getElementById('achievementForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addNewItem('achievement');
+                closeModal('achievement');
+            });
+            if (!localStorage.getItem('projects')) {
+                loadSampleData();
+            } else {
+                loadFromLocalStorage();
+            }
+        });
+        
+        function openModal(type) {
+            document.getElementById(`${type}Modal`).style.display = 'flex';
+        }
+        
+        function closeModal(type) {
+            document.getElementById(`${type}Modal`).style.display = 'none';
+            document.getElementById(`${type}Form`).reset();
+        }
+        
+        function addNewItem(type) {
+            const title = document.getElementById(`${type}Title`).value;
+            const description = document.getElementById(`${type}Description`).value;
+            const date = document.getElementById(`${type}Date`).value;
+            const container = document.querySelector(`.dashboard-card:nth-child(${getCardIndex(type)})`);
+            
+            const newItem = document.createElement('div');
+            newItem.className = `${type}-item`;
+            newItem.innerHTML = `
+                <h3 class="item-title">${title}</h3>
+                <p class="item-description">${description}</p>
+                <p class="item-date">${formatDate(date)}</p>
+            `;
+            
+            if (type === 'project' || type === 'event') {
+                const skills = document.getElementById(`${type}Skills`).value;
+                if (skills.trim() !== '') {
+                    const skillsContainer = document.createElement('div');
+                    skillsContainer.className = 'item-skills';
+                    
+                    skills.split(',').forEach(skill => {
+                        const skillTag = document.createElement('span');
+                        skillTag.className = 'skill-tag';
+                        skillTag.textContent = skill.trim();
+                        skillsContainer.appendChild(skillTag);
+                    });
+                    
+                    newItem.appendChild(skillsContainer);
+                }
+            }
+            
+            if (type === 'certificate' || type === 'achievement') {
+                const org = document.getElementById(`${type}Organization`).value;
+                if (org) {
+                    const orgElement = document.createElement('p');
+                    orgElement.className = 'item-organization';
+                    orgElement.textContent = `From: ${org}`;
+                    newItem.appendChild(orgElement);
+                }
+            }
+            const addBtn = container.querySelector('.add-btn');
+            container.insertBefore(newItem, addBtn);
+            saveToLocalStorage();
+        }
+        
+        function getCardIndex(type) {
+            switch(type) {
+                case 'project': return 1;
+                case 'event': return 2;
+                case 'certificate': return 3;
+                case 'achievement': return 4;
+                default: return 1;
+            }
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long' };
+            return date.toLocaleDateString(undefined, options);
+        }
+        
+        function saveToLocalStorage() {
+            const projects = [];
+            const events = [];
+            const certificates = [];
+            const achievements = [];
+            
+            document.querySelectorAll('.project-item').forEach(item => {
+                if (item.querySelector('.item-title') && !item.classList.contains('template')) {
+                    projects.push({
+                        title: item.querySelector('.item-title').textContent,
+                        description: item.querySelector('.item-description')?.textContent || '',
+                        date: item.querySelector('.item-date')?.textContent || '',
+                        skills: item.querySelector('.item-skills')?.textContent || ''
+                    });
+                }
+            });
+            
+            document.querySelectorAll('.event-item').forEach(item => {
+                if (item.querySelector('.item-title') && !item.classList.contains('template')) {
+                    events.push({
+                        title: item.querySelector('.item-title').textContent,
+                        description: item.querySelector('.item-description')?.textContent || '',
+                        date: item.querySelector('.item-date')?.textContent || '',
+                        skills: item.querySelector('.item-skills')?.textContent || ''
+                    });
+                }
+            });
+            
+            document.querySelectorAll('.certificate-item').forEach(item => {
+                if (item.querySelector('.item-title') && !item.classList.contains('template')) {
+                    certificates.push({
+                        title: item.querySelector('.item-title').textContent,
+                        description: item.querySelector('.item-description')?.textContent || '',
+                        date: item.querySelector('.item-date')?.textContent || '',
+                        issuer: item.querySelector('.item-organization')?.textContent?.replace('From: ', '') || ''
+                    });
+                }
+            });
+            
+            document.querySelectorAll('.achievement-item').forEach(item => {
+                if (item.querySelector('.item-title') && !item.classList.contains('template')) {
+                    achievements.push({
+                        title: item.querySelector('.item-title').textContent,
+                        description: item.querySelector('.item-description')?.textContent || '',
+                        date: item.querySelector('.item-date')?.textContent || '',
+                        organization: item.querySelector('.item-organization')?.textContent?.replace('From: ', '') || ''
+                    });
+                }
+            });
+            
+            localStorage.setItem('projects', JSON.stringify(projects));
+            localStorage.setItem('events', JSON.stringify(events));
+            localStorage.setItem('certificates', JSON.stringify(certificates));
+            localStorage.setItem('achievements', JSON.stringify(achievements));
+        }
+        
+        function loadFromLocalStorage() {
+            const projects = JSON.parse(localStorage.getItem('projects') || '[]');
+            const events = JSON.parse(localStorage.getItem('events') || '[]');
+            const certificates = JSON.parse(localStorage.getItem('certificates') || '[]');
+            const achievements = JSON.parse(localStorage.getItem('achievements') || '[]');
+            
+            loadItems('project', projects);
+            loadItems('event', events);
+            loadItems('certificate', certificates);
+            loadItems('achievement', achievements);
+        }
+        
+        function loadItems(type, items) {
+            const card = document.querySelector(`.dashboard-card:nth-child(${getCardIndex(type)})`);
+            
+            // Clear existing items (except template)
+            const existingItems = card.querySelectorAll(`.${type}-item:not(.template)`);
+            existingItems.forEach(item => item.remove());
+            
+            items.forEach(item => {
+                const newItem = document.createElement('div');
+                newItem.className = `${type}-item`;
+                
+                newItem.innerHTML = `
+                    <h3 class="item-title">${item.title}</h3>
+                    <p class="item-description">${item.description}</p>
+                    <p class="item-date">${item.date}</p>
+                `;
+                
+                if (type === 'project' || type === 'event') {
+                    if (item.skills && item.skills.trim() !== '') {
+                        const skillsContainer = document.createElement('div');
+                        skillsContainer.className = 'item-skills';
+                        
+                        item.skills.split(',').forEach(skill => {
+                            const skillTag = document.createElement('span');
+                            skillTag.className = 'skill-tag';
+                            skillTag.textContent = skill.trim();
+                            skillsContainer.appendChild(skillTag);
+                        });
+                        
+                        newItem.appendChild(skillsContainer);
+                    }
+                }
+                
+                if ((type === 'certificate' || type === 'achievement') && item.issuer) {
+                    const issuerElement = document.createElement('p');
+                    issuerElement.className = 'item-organization';
+                    issuerElement.textContent = `From: ${item.issuer}`;
+                    newItem.appendChild(issuerElement);
+                }
+                const addBtn = card.querySelector('.add-btn');
+                card.insertBefore(newItem, addBtn);
+            });
+        }
+        
+        function loadSampleData() {
+            const sampleProjects = [
+                {
+                    title: "Portfolio Website",
+                    description: "Developed a responsive personal portfolio website showcasing my projects and skills.",
+                    date: "March 2023",
+                    skills: "HTML, CSS, JavaScript"
+                },
+                {
+                    title: "Weather App",
+                    description: "Built a weather application that fetches and displays current weather conditions.",
+                    date: "January 2023",
+                    skills: "JavaScript, API"
+                }
+            ];
+            
+            const sampleEvents = [
+                {
+                    title: "University Hackathon",
+                    description: "Participated in a 48-hour coding competition and built a prototype application.",
+                    date: "April 2023",
+                    skills: "Teamwork, Problem Solving"
+                }
+            ];
+            
+            const sampleCertificates = [
+                {
+                    title: "Introduction to Web Development",
+                    description: "Completed a comprehensive course covering HTML, CSS, and JavaScript fundamentals.",
+                    date: "December 2022",
+                    issuer: "Online Learning Platform"
+                }
+            ];
+            
+            const sampleAchievements = [
+                {
+                    title: "Dean's List",
+                    description: "Academic excellence award for maintaining GPA above 3.8",
+                    date: "Spring 2023",
+                    organization: "University"
+                }
+            ];
+            
+            localStorage.setItem('projects', JSON.stringify(sampleProjects));
+            localStorage.setItem('events', JSON.stringify(sampleEvents));
+            localStorage.setItem('certificates', JSON.stringify(sampleCertificates));
+            localStorage.setItem('achievements', JSON.stringify(sampleAchievements));
+            
+            loadFromLocalStorage();
+            }
+    const text = "👨‍💻 Welcome to My Hackathon Portfolio!";
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+    </script>
+</body>
+</html>
