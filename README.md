@@ -1,38 +1,42 @@
-💼 Hackathon Portfolio
+# 🚀 Hackathon Portfolio Project
 
-Welcome to my personal hackathon portfolio, designed to showcase my skills, projects, and creative ideas in a visually appealing and interactive format.
+This is a personal portfolio webpage created as part of a hackathon. It highlights frontend web development using HTML, CSS, and JavaScript.
 
-🌐 Live Website
+---
 
-👉 https://its-abhi-tech.github.io/hackathon-protfolio/hack.html
+## 🔗 Live 
+🌐 [View Project](https://its-abhi-tech.github.io/hackathon-protfolio/hack.html)
 
-📂 Project Structure
-├── index.html        # Main HTML page
-├── style.css         # Styling for the portfolio
-├── script.js         # JavaScript for interactivity
-└── assets/           # Folder for images, videos, icons, etc.
+---
 
-⚒️ Technologies Used
-• HTML5
-• CSS3
-• JavaScript
+## 📁 Project Structure
+hackathon-protfolio/
+├── hack.html # Main HTML file
+├── style.css # Custom styling
+├── script.js # JavaScript interactivity
 
-🎯 Features
+---
 
-• Responsive layout
+## 🛠 Tech Stack
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
-• Smooth scrolling navigation
+---
 
-• Interactive JavaScript effects
+## 🧪 How to Run Locally
 
-• Clean and modern UI design
+---bash
+git clone https://github.com/its-abhi-tech/hackathon-protfolio.git
+cd hackathon-protfolio
+open hack.html (or double-click)
+✨ Features
+Mobile responsive layout
 
-🌟 Future Improvements
+Clean, modern UI
 
-• Add a contact form
+Deployed using GitHub Pages
+🎯 Purpose
+Built for a hackathon to demonstrate web development and UI/UX skills.
 
-• Include project filtering and animation
 
-• Add backend integration for blog/posts section
-
-Made with ❤️ by Abhishek for hackathons and beyond.
